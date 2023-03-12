@@ -3,11 +3,9 @@
 
 # x is the angle in degrees
 # n is the number of terms in Taylor series
-
-import PI;
+import PI
 
 def sin(degrees):
-
     n = 1000
 
     x = (PI.PI() / 180) * degrees;
@@ -21,8 +19,6 @@ def sin(degrees):
         result += sign * power / fact
         sign *= -1.0
         power *= x * x
-        fact *= (2*i + 2) * (2*i + 3)
+        fact *= (2 * i + 2) * (2 * i + 3)
 
-    return  result
-
-print("Sin(x) value is", sin(30))
+    return result

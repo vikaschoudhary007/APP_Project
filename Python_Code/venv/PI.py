@@ -8,20 +8,17 @@
 # number of terms used for approximation
 
 def PI():
-
     number_of_terms = 1000000
 
     sum = 0
     sign = 1;
 
     for i in range(number_of_terms):
-
-        new_term = sign/(2*i + 1)
-        sum = sum+new_term
+        new_term = sign / (2 * i + 1)
+        sum = sum + new_term
         sign *= -1;
 
     # use this sum to estimate PI
 
     PI = 4 * sum;
     return PI
-
