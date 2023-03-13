@@ -1,3 +1,13 @@
+# In this implementation, newton_method is a function that takes as input the function f, its derivative df,
+# an initial guess x0, an error tolerance eps, and a maximum number of iterations max_iter. It uses the Newton method
+# to solve for the root of the function f, starting at x0 and iteratively updating the guess using the formula x - f(
+# x)/f'(x). The function stops iterating when the absolute value of f(x) is less than eps, or when the derivative f'(
+# x) is zero. It returns the solution x, or None if no solution was found within the maximum number of iterations. In
+# this case, the function f is defined as x - sin(x) - pi/2, and its derivative df is defined as 1 - cos(x). The
+# initial guess x0 is set to pi/2, since we know that the root is close to this value. The resulting alpha value is
+# printed to the console.
+
+
 from PI import PI
 from Sin import sin
 from Cos import cos
