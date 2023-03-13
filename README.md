@@ -12,3 +12,10 @@ sin(x) = x - (x^3)/3! + (x^5)/5! - (x^7)/7! + ...
 Using Taylor series expansion to calculate the Cosine function
 cos(x) = 1 - x^2/2! + x^4/4! - x^6/6! + ...
 
+Newton method in Python to solve for alpha given the equation 
+α – sin(α) = π/2. 
+
+l = 2R(1 – cos(α/2))    // Using the values of α calculated using the Newton Method
+
+
+
