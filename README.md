@@ -29,6 +29,10 @@ l = 2R(1 – cos(α/2))    // Using the values of α calculated using the Newton
 Depending on the application and amount of precision required, Monte Carlo or the Leibniz formula may be preferable for estimating pi.
 When a very large number of decimal places of pi are required, the Monte Carlo approach may be more effective since it may attain great precision with very few calculations. Nevertheless, it can be computationally demanding and need the generation of several random numbers, which can take a lot of time. For estimating pi, the Leibniz formula is a reasonably easy-to-understand formula that may be quickly calculated for a given number of terms.
 
+References :
+https://www.geeksforgeeks.org/calculate-pi-with-python/
+https://iq.opengenus.org/different-ways-to-calculate-pi/
+
 
 # These are several ways to compute the sin(x) function in Python without using any libraries
 
