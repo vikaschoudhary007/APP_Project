@@ -30,7 +30,9 @@ Depending on the application and amount of precision required, Monte Carlo or th
 When a very large number of decimal places of pi are required, the Monte Carlo approach may be more effective since it may attain great precision with very few calculations. Nevertheless, it can be computationally demanding and need the generation of several random numbers, which can take a lot of time. For estimating pi, the Leibniz formula is a reasonably easy-to-understand formula that may be quickly calculated for a given number of terms.
 
 References :
+
 https://www.geeksforgeeks.org/calculate-pi-with-python/
+
 https://iq.opengenus.org/different-ways-to-calculate-pi/
 
 
