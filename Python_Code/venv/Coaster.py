@@ -1,6 +1,4 @@
-from utils.PI import *
-from utils.Sin import *
-from utils.Cos import *
+from Python_Code.venv.Circle import Circle
 
 
 class Coaster(Circle):

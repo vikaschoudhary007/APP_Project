@@ -6,36 +6,49 @@
 # this case, the function f is defined as x - sin(x) - pi/2, and its derivative df is defined as 1 - cos(x). The
 # initial guess x0 is set to pi/2, since we know that the root is close to this value. The resulting alpha value is
 # printed to the console.
+from Python_Code.venv.Cos import cos
+from Python_Code.venv.PI import PI
+from Python_Code.venv.Sin import sin
+from xml.etree.ElementTree import Element,tostring
 
 
-from PI import PI
-from Sin import sin
-from Cos import cos
+def dict_to_xml(tag, d):
+    elem = Element(tag)
+    for key, val in d.items():
+        # create an Element
+        # class object
+        child = Element(key)
+        child.text = str(val)
+        elem.append(child)
 
-def newton_method(f, df, x0, eps=1e-6, max_iter=100):
+    return elem
+
+def newton_method(x0, eps=1e-6, max_iter=1000):
     x = x0
     for i in range(max_iter):
-        fx = f(x)
-        if abs(fx) < eps:
-            return x
-        dfx = df(x)
-        if dfx == 0:
+        if df(x) == 0:
             break
-        x -= fx / dfx
-    return None
+        x0 = x - (f(x) / df(x))
+        if abs(x0 - x) < eps:
+            return x0
+        x = x0
+    return x0
 
 
 def f(x):
-    return x - sin(x) - PI() / 2
+    return x - sin(x) - (PI() / 2)
 
 
 def df(x):
     return 1 - cos(x)
 
-R = 0.5
-print("HEll0")
+x0 = 2
+alpha = newton_method(x0)
+final = {}
+for R in range(5, 10):
+    l = 2 * R * (1 - cos(alpha / 2))
+    final[str(R)] = str(l)
 
-alpha = newton_method(f, df, PI() / 2)
-l = 2 * R * (1 - cos(alpha / 2))
-print("alpha:", alpha)
-print("l:", l)
+e = dict_to_xml('Circle', final)
+print(e)
+print(tostring(e))

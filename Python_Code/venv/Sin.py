@@ -3,12 +3,10 @@
 
 # x is the angle in degrees
 # n is the number of terms in Taylor series
-import PI
 
-def sin(degrees):
-    n = 1000
 
-    x = (PI.PI() / 180) * degrees;
+def sin(x):
+    n = 100
 
     result = 0.0
     sign = 1.0

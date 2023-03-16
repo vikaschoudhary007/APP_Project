@@ -3,12 +3,10 @@
 
 # x is the angle in degrees
 # n is the number of terms in Taylor series
-import PI
 
-def cos(degrees):
-    n = 1000
 
-    x = (PI.PI() / 180) * degrees;
+def cos(x):
+    n = 100
 
     result = 1.0
     sign = -1.0
@@ -19,7 +17,7 @@ def cos(degrees):
         result += sign * power / fact
         sign *= -1.0
         power *= x * x
-        fact *= (2 * i) * (2 * i + 1)
+        fact *= (2 * i + 1) * (2 * i + 2)
+        #print("fact is:" ,fact)
 
     return result
-

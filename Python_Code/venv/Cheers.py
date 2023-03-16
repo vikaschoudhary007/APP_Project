@@ -1,4 +1,4 @@
-from Coaster import *
+from Python_Code.venv.Coaster import Coaster
 
 
 class CHEERS:
