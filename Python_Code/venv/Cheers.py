@@ -24,6 +24,7 @@ class CHEERS:
         return self.coaster1.get_radious(), self.display_output()
 
 
+# this function gives output in XML
 def dict_to_xml(tag, d):
     elem = Element(tag)
     for key, val in d.items():
