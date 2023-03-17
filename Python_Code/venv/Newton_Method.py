@@ -9,19 +9,6 @@
 from Python_Code.venv.Cos import cos
 from Python_Code.venv.PI import PI
 from Python_Code.venv.Sin import sin
-from xml.etree.ElementTree import Element,tostring
-
-
-def dict_to_xml(tag, d):
-    elem = Element(tag)
-    for key, val in d.items():
-        # create an Element
-        # class object
-        child = Element(key)
-        child.text = str(val)
-        elem.append(child)
-
-    return elem
 
 def newton_method(x0, eps=1e-6, max_iter=1000):
     x = x0
@@ -42,13 +29,7 @@ def f(x):
 def df(x):
     return 1 - cos(x)
 
-x0 = 2
-alpha = newton_method(x0)
-final = {}
-for R in range(5, 10):
+def shift_distance(x0, R):
+    alpha = newton_method(x0)
     l = 2 * R * (1 - cos(alpha / 2))
-    final[str(R)] = str(l)
-
-e = dict_to_xml('Circle', final)
-print(e)
-print(tostring(e))
+    return l / 2

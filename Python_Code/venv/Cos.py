@@ -3,8 +3,6 @@
 
 # x is the angle in degrees
 # n is the number of terms in Taylor series
-
-
 def cos(x):
     n = 100
 
