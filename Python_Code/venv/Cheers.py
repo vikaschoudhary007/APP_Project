@@ -1,15 +1,26 @@
 from Python_Code.venv.Coaster import Coaster
-from xml.etree.ElementTree import Element, tostring
+from dicttoxml import dicttoxml
+import matplotlib.pyplot as plt
+from Python_Code.venv.PI import PI
 
 
 class CHEERS:
     def __init__(self):
         self.coaster1 = None
+        self.x0 = PI()/2
 
     def get_input(self):
-        r1 = float(input("Enter the radius of coaster: "))
-        self.coaster1 = Coaster(r1)
-        self.x0 = float(input("Enter the starting point for newton method: "))
+        try:
+            r1 = float(input("Enter the radius of coaster: "))
+            self.coaster1 = Coaster(r1)
+        except ValueError:
+            print("Invalid input. Please enter a valid radius.")
+
+    def get_newton_input(self):
+        try:
+            self.x0 = float(input("Enter the starting point for newton method: "))
+        except ValueError:
+            print("Invalid input. Please enter a valid starting point for newton method.")
 
     def display_output(self):
         string = ""
@@ -21,32 +32,39 @@ class CHEERS:
 
     def run(self):
         self.get_input()
-        return self.coaster1.get_radious(), self.display_output()
+        self.get_newton_input()
+        return self.coaster1.get_radius(), self.display_output()
 
-
-# this function gives output in XML
-def dict_to_xml(tag, d):
-    elem = Element(tag)
-    for key, val in d.items():
-        # create an Element
-        # class object
-        child = Element(key)
-        child.text = str(val)
-        elem.append(child)
-
-    return elem
 
 if __name__ == '__main__':
-    s = 1
-    final_dict = {}
-    while (s != 0):
+
+    operation = int(input("Do you want output in JSON or XML? 1 for JSON/0 for XML \n"))
+
+    if operation == 1:
+        final_dict = {}
         cheers = CHEERS()
         radius, result = cheers.run()
         final_dict[str(radius)] = str(result)
         print(final_dict)
-        s = int(input("Do you wish to continue?1/0\n"))
-        print(s)
 
-    e = dict_to_xml('Circle', final_dict)
-    print(e)
-    print(tostring(e))
+    elif operation == 0:
+        s = 1
+        final_dict = {}
+        while s != 0:
+            cheers = CHEERS()
+            radius, result = cheers.run()
+            final_dict[str(radius)] = str(result)
+            print(final_dict)
+            s = int(input("Do you wish to continue?1/0\n"))
+
+        xml = dicttoxml(final_dict)
+        xml_decode = xml.decode()
+        xmlFile = open("xmlOutput.xml", "w")
+        xmlFile.write(xml_decode)
+        xmlFile.close()
+
+        names = list(final_dict.keys())
+        values = list(final_dict.values())
+
+        plt.bar(range(len(final_dict)), values, tick_label=names)
+        plt.show()

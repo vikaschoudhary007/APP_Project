@@ -6,6 +6,9 @@
 
 
 def sin(x):
+    if not isinstance(x, (int, float)):
+        raise TypeError("x must be a number")
+
     n = 100
 
     result = 0.0

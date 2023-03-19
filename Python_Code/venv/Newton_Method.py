@@ -10,11 +10,12 @@ from Python_Code.venv.Cos import cos
 from Python_Code.venv.PI import PI
 from Python_Code.venv.Sin import sin
 
+
 def newton_method(x0, eps=1e-6, max_iter=1000):
     x = x0
     for i in range(max_iter):
         if df(x) == 0:
-            break
+            raise ValueError("Error: derivative is zero")
         x0 = x - (f(x) / df(x))
         if abs(x0 - x) < eps:
             return x0
@@ -29,7 +30,12 @@ def f(x):
 def df(x):
     return 1 - cos(x)
 
+
 def shift_distance(x0, R):
-    alpha = newton_method(x0)
-    l = 2 * R * (1 - cos(alpha / 2))
-    return l / 2
+    try:
+        alpha = newton_method(x0)
+        l = 2 * R * (1 - cos(alpha / 2))
+        return l / 2
+    except ValueError as e:
+        print(e)
+        return None

@@ -9,7 +9,7 @@ class Coaster(Circle):
         self.distance = None
 
     def overlap(self):
-        self.overlap_area =  self.area() / 2
+        self.overlap_area = self.area() / 2
         return self.overlap_area
 
     def shift_distance(self, x0):
@@ -24,8 +24,8 @@ class Coaster(Circle):
         if self.overlap_area is not None:
             string += f"Overlap area: {self.overlap_area}\n"
         if self.distance is not None:
-            string+= f"Distance needed to shift coaster for overlap to be half the area: {self.distance}\n"
+            string += f"Distance needed to shift coaster for overlap to be half the area: {self.distance}\n"
         return string
 
-    def get_radious(self):
+    def get_radius(self):
         return self.radius
