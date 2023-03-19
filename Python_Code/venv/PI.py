@@ -7,6 +7,25 @@
 
 
 def PI():
+    """
+       Estimate the value of pi using the Leibniz formula and returns the calculated value.
+
+       The Leibniz formula is a way to estimate pi based on an alternating series. The more terms
+       of the series that are added together, the more accurate the estimate becomes.
+
+       Returns:
+       --------
+       float: The estimated value of pi.
+
+       Raises:
+       -------
+       Exception: If an error occurs during calculation.
+
+       Example:
+       --------
+       >>> PI()
+       3.1415916535897743
+       """
     try:
 
         number_of_terms = 1000000

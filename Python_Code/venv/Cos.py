@@ -5,6 +5,21 @@
 
 
 def cos(x):
+    """
+    This function approximates the cosine of an angle in degrees using Taylor series expansion.
+
+    Args:
+        x (float): The angle in degrees to calculate the cosine for.
+
+    Returns:
+        float: The approximation of the cosine of the given angle.
+
+    Raises:
+        TypeError: If the input argument `x` is not a number.
+
+    Note:
+        This function uses 100 terms in the Taylor series expansion to calculate the cosine.
+    """
     if not isinstance(x, (int, float)):
         raise TypeError("x must be a number")
 
