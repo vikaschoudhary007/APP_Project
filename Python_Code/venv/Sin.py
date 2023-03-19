@@ -6,6 +6,22 @@
 
 
 def sin(x):
+    """
+    Calculate the sine of an angle in radians using Taylor series expansion.
+
+    Args:
+    x (int or float): The angle in radians.
+
+    Returns:
+    The sine of the given angle.
+
+    Raises:
+    TypeError: If the input is not an int or float.
+
+    Note:
+    Uses the Taylor series expansion formula for sine:
+    sin(x) = x - x^3/3! + x^5/5! - x^7/7! + ...
+    """
     if not isinstance(x, (int, float)):
         raise TypeError("x must be a number")
 
