@@ -50,4 +50,4 @@ We can compute sin(x) by summing up the first n terms of this series, where n is
 
 # Why Taylor Series ?
 
-When a high level of precision is required and the function can be reasonably approximated by a polynomial, Taylor series are a solid option. They perform best when the function is bounded and highly differentiable. For elementary computations, the Taylor series expansion for sine and cosine is a useful option since it is comparatively easy to understand.
+When a high level of precision is required and the function can be reasonably approximated by a polynomial, Taylor series is a solid option. They perform best when the function is bounded and highly differentiable. For elementary computations, the Taylor series expansion for sine and cosine is a useful option since it is comparatively easy to understand.
